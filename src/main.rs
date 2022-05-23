@@ -4,12 +4,15 @@ struct Rectangle {
     height: u32,
 }
 
-fn main() {
-    let scale = 2;
-    let rect1 = Rectangle {
-        width: dbg!(30 * scale),
-        height: 50,
-    };
+impl Rectangle {
+    fn square(size: u32) -> Rectangle {
+        Rectangle {
+            width: size,
+            height: size,
+        }
+    }
+}
 
-    dbg!(&rect1);
+fn main() {
+    let sq = Rectangle::square(3);
 }
